@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "bef9cac1-eab2-4109-901b-8aba42efc17d",
+		"name": "Subscriptions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18669345"
+	},
+	"item": [
+		{
+			"name": "Get Subs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"asd\",\n    \"expire_date\": \"2023-01-01T00:00:00\",\n    \"issue_date\": \"2022-09-25T00:00:00\",\n    \"user_email\": \"ads@asd.com\",\n    \"user_slug\": \"asd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch subs",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12345678\",\n    \"expire_date\": \"2023-01-01T00:00:00\",\n    \"issue_date\": \"2022-09-25T00:00:00\",\n    \"user_email\": \"ads@asd.com\",\n    \"user_slug\": \"asd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/subscriptions/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subscriptions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Subs",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12345678\",\n    \"expire_date\": \"2023-01-01T00:00:00\",\n    \"issue_date\": \"2022-09-25T00:00:00\",\n    \"user_email\": \"ads@asd.com\",\n    \"user_slug\": \"asd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/subscriptions/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subscriptions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
