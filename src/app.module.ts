@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { Subscription } from './subscriptions/entities/subscription.entity';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
+require('dotenv').config()
+
 const db_options = {
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT || '5432'),
