@@ -15,6 +15,8 @@ const db_options = {
   database: process.env.DB_NAME, 
 }
 
+console.log(db_options);
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
