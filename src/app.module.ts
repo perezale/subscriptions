@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Subscription } from './subscriptions/entities/subscription.entity';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { CustomersModule } from './customers/customers.module';
+import { Customer } from './customers/entities/customer.entity';
 
 require('dotenv').config()
 
@@ -22,10 +24,11 @@ console.log(db_options);
     TypeOrmModule.forRoot({
       type: 'postgres',
       ...db_options,
-      entities: [Subscription],
+      entities: [Subscription, Customer],
       synchronize: true,
     }),
-    SubscriptionsModule],
+    SubscriptionsModule,
+    CustomersModule],
   controllers: [AppController],
   providers: [AppService],
 })

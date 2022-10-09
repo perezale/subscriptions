@@ -1,4 +1,5 @@
 import { IsEmail, IsNotEmpty } from "class-validator";
+import { Customer } from "src/customers/entities/customer.entity";
 
 export class CreateSubscriptionDto {
 
@@ -11,10 +12,6 @@ export class CreateSubscriptionDto {
   @IsNotEmpty()
   issue_date: Date;
 
-  @IsEmail()
   @IsNotEmpty()
-  user_email: string;
-  
-  @IsNotEmpty()
-  user_slug: string;
+  customer: Customer;
 }

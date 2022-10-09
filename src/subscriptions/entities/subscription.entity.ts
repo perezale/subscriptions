@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Customer } from "src/customers/entities/customer.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Subscription {
@@ -15,11 +16,8 @@ export class Subscription {
   @Column()
   issue_date: Date;
 
-  @Column()
-  user_email: string;
-
-  @Column()
-  user_slug: string;
-
+  @ManyToOne(type => Customer, customer => customer.subscriptionList )
+  @JoinColumn({name: "customer_id"})
+  customer: Customer;
 
 }

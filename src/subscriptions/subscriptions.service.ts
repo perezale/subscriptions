@@ -10,7 +10,6 @@ export class SubscriptionsService {
 
   constructor(
     @InjectRepository(Subscription) private subsRepo:Repository<Subscription>){
-
   }
 
   create(createSubscriptionDto: CreateSubscriptionDto) {
@@ -18,7 +17,11 @@ export class SubscriptionsService {
   }
 
   findAll() {
-    return this.subsRepo.find();
+    return this.subsRepo.find({
+      relations: {
+        customer: true
+      }
+    });
   }
 
   findOne(id: number) {
